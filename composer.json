@@ -1,5 +1,5 @@
 {
-  "name": "AirSuite/laravel-queue-rackspace-cloud",
+  "name": "air-suite/laravel-queue-rackspace-cloud",
   "description": "RackspaceCloud driver for Laravel/Lumen Queue",
   "license": "MIT",
   "authors": [
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "YonderWeb\\LaravelQueueRackspaceCloud": "src/"
+      "YonderWeb\\LaravelQueueRackspaceCloud\\": "src/"
     }
   },
   "minimum-stability": "dev",

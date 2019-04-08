@@ -1,16 +1,12 @@
 RackspaceCloud Queue driver for Laravel
 ======================
-WIP
+## Installation
 
-####Installation
+You can install this package via composer using this command:
 
-Require this package in your composer.json and run composer update:
-
-	"davidlonjon/laravel-queue-rackspace-cloud": "dev-master"
-
-After composer update is finished you need to add ServiceProvider to your `providers` array in `app.php`:
-
-	YonderWeb\LaravelQueueRackspaceCloud\LaravelQueueRackspaceCloudServiceProvider::class,
+```
+composer require air-suite/laravel-queue-rackspace-cloud
+```
 
 Add these lines to your `app/config/queue.php` file to `connections` array:
 
@@ -36,19 +32,16 @@ And add these properties to `.env` with proper values:
 
 You can also find full examples in src/examples folder.
 
-####Usage
-Once you completed the configuration you can use Laravel Queue API. If you used other queue drivers you do not need to change anything else. If you do not know how to use Queue API, please refer to the official Laravel documentation: http://laravel.com/docs/queues
+## Lumen Usage
 
-####PHPUnit
-Unit tests will be provided soon.
+For Lumen usage the service provider should be registered manually as follow in `bootstrap/app.php`:
 
-####Contribution
-You can contribute to this package by discovering bugs and opening issues. Enjoy!
+```php
+$app->register(AirSuite\LaravelQueueRackspaceCloud\LaravelQueueRackspaceCloudServiceProvider::class);
+```
 
 ####Attribution
 This package has been guided and inspired by:
 * https://github.com/vladimir-yuldashev/laravel-queue-rabbitmq
 * https://github.com/tailwind/laravel-rackspace-cloudqueue
-
-####Supported versions of Laravel/Lumen
-TBC
+* https://github.com/davidlonjon/laravel-queue-rackspace-cloud
