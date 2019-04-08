@@ -1,23 +1,24 @@
 {
-  "name": "davidlonjon/laravel-queue-rackspace-cloud",
+  "name": "AirSuite/laravel-queue-rackspace-cloud",
   "description": "RackspaceCloud driver for Laravel/Lumen Queue",
   "license": "MIT",
   "authors": [
     {
-      "name": "David Lonjon",
-      "email": "david.lonjon@gmail.com"
+      "name": "Mitchell Pynn",
+      "email": "mitchell@air-suite.com"
     }
   ],
   "require": {
-    "php": ">=5.5.9",
-    "illuminate/support": "5.2.*",
-    "illuminate/queue": "5.2.*",
-    "rackspace/php-opencloud": "dev-master"
+    "php": ">=5.4.0",
+    "illuminate/support": "5.7.*|5.8.*",
+    "illuminate/queue": "5.7.*|5.8.*",
+    "rackspace/php-opencloud": "~1.16"
   },
   "autoload": {
-    "psr-0": {
+    "psr-4": {
       "YonderWeb\\LaravelQueueRackspaceCloud": "src/"
     }
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
