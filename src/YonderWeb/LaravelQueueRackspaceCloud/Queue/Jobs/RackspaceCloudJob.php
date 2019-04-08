@@ -5,6 +5,7 @@ namespace YonderWeb\LaravelQueueRackspaceCloud\Queue\Jobs;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Queue\Job as JobContract;
 use Illuminate\Queue\Jobs\Job;
+use Illuminate\Queue\Jobs\JobName;
 use OpenCloud\Queues\Resource\Queue as OpenCloudQueue;
 use OpenCloud\Queues\Resource\Message;
 use YonderWeb\LaravelQueueRackspaceCloud\Queue\RackspaceCloudQueue;
@@ -46,7 +47,11 @@ class RackspaceCloudJob extends Job implements JobContract
      */
     public function fire()
     {
-        $this->resolveAndFire(json_decode($this->getRawBody(), true));
+      $payload = $this->payload();
+      [$class, $method] = JobName::parse($payload['job']);
+      with($this->instance = $this->resolve($class))->{$method}($this, $payload['data']);
+
+//        $this->resolveAndFire(json_decode($this->getRawBody(), true));
     }
 
     /**
