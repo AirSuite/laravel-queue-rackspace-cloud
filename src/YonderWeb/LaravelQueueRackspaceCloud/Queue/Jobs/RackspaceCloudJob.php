@@ -50,8 +50,6 @@ class RackspaceCloudJob extends Job implements JobContract
       $payload = $this->payload();
       [$class, $method] = JobName::parse($payload['job']);
       with($this->instance = $this->resolve($class))->{$method}($this, $payload['data']);
-
-//        $this->resolveAndFire(json_decode($this->getRawBody(), true));
     }
 
     /**

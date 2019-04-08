@@ -1,11 +1,19 @@
-RackspaceCloud Queue driver for Laravel
+RackspaceCloud Queue Driver for Laravel/Lumen
 ======================
 ## Installation
 
-You can install this package via composer using this command:
+You can install this package via composer.json:
 
 ```
-composer require air-suite/laravel-queue-rackspace-cloud
+  "repositories": [
+    {
+      "url": "https://github.com/AirSuite/laravel-queue-rackspace-cloud.git",
+      "type": "git"
+    }
+  ],
+  "require"          : {
+      "air-suite/laravel-queue-rackspace-cloud": "^1.1.0"
+    },
 ```
 
 Add these lines to your `app/config/queue.php` file to `connections` array:
@@ -16,8 +24,8 @@ Add these lines to your `app/config/queue.php` file to `connections` array:
 		'endpoint' => env('RACKSPACECLOUD_ENDPOINT', 'US'), // US or UK
 		'username' => env('RACKSPACECLOUD_USERNAME', 'guest'), // Some Rackspace Cloud username
 		'apiKey' => env('RACKSPACECLOUD_APIKEY', '1234'), // Some Rackspace Cloud api
-		'region' => env('RACKSPACECLOUD_REGION', 'DFW'), // The region the queue is setup
-		'urlType'  => env('RACKSPACECLOUD_URLTYPE', 'internalURL'), /// Optional, defaults to internalURL
+		'region' => env('RACKSPACECLOUD_REGION', 'ORD'), // The region the queue is setup
+		'urlType'  => env('RACKSPACECLOUD_URLTYPE', 'internalURL'), // Optional, defaults to internalURL
 	],
 
 And add these properties to `.env` with proper values:
@@ -28,7 +36,7 @@ And add these properties to `.env` with proper values:
 	RACKSPACECLOUD_APIKEY=your_rackspace_api_key
 	RACKSPACECLOUD_REGION=your_rackspace_region
 
-	QUEUE_DRIVER=RackspaceCloud
+	QUEUE_CONNECTION=RackspaceCloud
 
 You can also find full examples in src/examples folder.
 
@@ -41,6 +49,7 @@ $app->register(YonderWeb\LaravelQueueRackspaceCloud\LaravelQueueRackspaceCloudSe
 ```
 
 ####Attribution
+
 This package has been guided and inspired by:
 * https://github.com/vladimir-yuldashev/laravel-queue-rabbitmq
 * https://github.com/tailwind/laravel-rackspace-cloudqueue
