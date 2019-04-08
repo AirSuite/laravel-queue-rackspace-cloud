@@ -51,6 +51,18 @@ class RackspaceCloudQueue extends Queue implements QueueContract
         $this->queue = $this->getQueue($default);
     }
 
+  /**
+   * Get the size of the queue.
+   *
+   * @param  string  $queue
+   * @return int
+   */
+  public function size($queue = null)
+    {
+      // not implemented
+      return 1;
+    }
+
     /**
      * Push a new job onto the queue.
      *
