@@ -45,7 +45,7 @@ You can also find full examples in src/examples folder.
 For Lumen usage the service provider should be registered manually as follow in `bootstrap/app.php`:
 
 ```php
-$app->register(YonderWeb\LaravelQueueRackspaceCloud\LaravelQueueRackspaceCloudServiceProvider::class);
+$app->register(AirSuite\LaravelQueueRackspaceCloud\LaravelQueueRackspaceCloudServiceProvider::class);
 ```
 
 ####Attribution
